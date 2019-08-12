@@ -5,14 +5,14 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody rigid;
-    private Vector3 _velocity, startpos,endpos;
+    private Vector3 _velocity, startpos,endpos,scndpos;
     Camera cam;
     LineRenderer lr;
-    RaycastHit hit;
+    RaycastHit hit,objhit;
 
     void Start()
     {
-        rigid = this.GetComponent<Rigidbody>();
+        rigid = GetComponent<Rigidbody>();
         lr = GetComponent<LineRenderer>();
         lr.enabled = false;
         cam = Camera.main;
@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(ray.origin, ray.direction * 500, Color.black);
+       
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -41,10 +41,7 @@ public class Movement : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100))
             {
                 endpos = new Vector3(hit.point.x * -1f, transform.position.y, hit.point.z * -1f);
-
-                lr.SetPosition(1, endpos);
-
-                lr.SetPosition(2, new Vector3(5, 0, 5));
+               
             }
         }
 
@@ -65,12 +62,26 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonUp(0))
+        Ray objray = new Ray(transform.position, endpos);
+
+        if (Physics.Raycast(objray, out objhit, 100))
+        {
+           Vector3 scnd = new Vector3(objhit.point.x, transform.position.y, objhit.point.z);
+            lr.SetPosition(1, scnd);
+
+            scndpos = Vector3.Reflect(endpos, objhit.normal);
+            lr.SetPosition(2, scndpos);
+        }
+
+
+        if (Input.GetMouseButtonUp(0))
         {
             _velocity = Vector3.Scale(endpos,new Vector3(10f,1f,10f));
             rigid.AddForce(_velocity, ForceMode.VelocityChange);
         }
     }
+
+
 
 
     void OnCollisionEnter(Collision collision)
@@ -84,7 +95,7 @@ public class Movement : MonoBehaviour
 
     private void ReflectProjectile( Vector3 reflectVector)
     {
-            // reflectVector = reflectVector - new Vector3(0.1f,0f,0.1f);
+            reflectVector = reflectVector - new Vector3(0.1f,0f,0.1f);
             _velocity = Vector3.Reflect(_velocity, reflectVector);
             
             rigid.velocity = _velocity;
