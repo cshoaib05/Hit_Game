@@ -5,10 +5,10 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody rigid;
-    private Vector3 _velocity, startpos,endpos,scndpos;
+    private Vector3 _velocity, startpos,endpos,scndpos,dampspeed;
     Camera cam;
     LineRenderer lr;
-    RaycastHit hit,objhit;
+    RaycastHit hit,objhit,scndhit;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
         lr = GetComponent<LineRenderer>();
         lr.enabled = false;
         cam = Camera.main;
-        
+        dampspeed = new Vector3(1f, 1f, 1f);
     }
 
 
@@ -49,13 +49,10 @@ public class Movement : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             lr.enabled = false;
-            
+            dampspeed = new Vector3(1f, 1f, 1f);
         }
 
-        if(rigid.IsSleeping())
-        {
-            transform.position = new Vector3(0, transform.position.y, 0);
-        }
+    
     }
 
 
@@ -63,21 +60,37 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         Ray objray = new Ray(transform.position, endpos);
-
+       
         if (Physics.Raycast(objray, out objhit, 100))
         {
            Vector3 scnd = new Vector3(objhit.point.x, transform.position.y, objhit.point.z);
             lr.SetPosition(1, scnd);
 
             scndpos = Vector3.Reflect(endpos, objhit.normal);
-            lr.SetPosition(2, scndpos);
+
+            Ray thrdray = new Ray(scnd, scndpos);
+
+            if (Physics.Raycast(thrdray,out scndhit,100))
+            {
+                Vector3 thrd = new Vector3(scndhit.point.x, transform.position.y, scndhit.point.z);
+                lr.SetPosition(2, thrd);
+                thrd = Vector3.Reflect(scndpos, scndhit.normal);
+                lr.SetPosition(3, thrd);
+            }
         }
 
 
         if (Input.GetMouseButtonUp(0))
         {
             _velocity = Vector3.Scale(endpos,new Vector3(10f,1f,10f));
+
             rigid.AddForce(_velocity, ForceMode.VelocityChange);
+            rigid.sleepThreshold = 5f;
+        }
+    
+        if (rigid.IsSleeping())
+        {
+            transform.position = new Vector3(0, transform.position.y, 0);
         }
     }
 
@@ -88,17 +101,19 @@ public class Movement : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("coll"))
         {
-            ReflectProjectile(collision.GetContact(0).normal);   
+           //eflectProjectile(collision.GetContact(0).normal);   
         }
     }
 
 
     private void ReflectProjectile( Vector3 reflectVector)
     {
-            reflectVector = reflectVector - new Vector3(0.1f,0f,0.1f);
+                
             _velocity = Vector3.Reflect(_velocity, reflectVector);
-            
-            rigid.velocity = _velocity;
+
+        rigid.velocity = _velocity - rigid.velocity;
+        dampspeed = dampspeed + new Vector3(1f, 1f, 1f);
+
     }
 }
 
