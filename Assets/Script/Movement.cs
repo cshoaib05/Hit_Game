@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody rigid;
-    private Vector3 _velocity, startpos,endpos,scndpos,dampspeed;
+    private Vector3 _velocity, startpos,endpos,scndpos;
     Camera cam;
     LineRenderer lr;
     RaycastHit hit,objhit,scndhit;
@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
         lr = GetComponent<LineRenderer>();
         lr.enabled = false;
         cam = Camera.main;
-        dampspeed = new Vector3(1f, 1f, 1f);
+        
     }
 
 
@@ -49,7 +49,6 @@ public class Movement : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             lr.enabled = false;
-            dampspeed = new Vector3(1f, 1f, 1f);
         }
 
     
@@ -85,34 +84,19 @@ public class Movement : MonoBehaviour
             _velocity = Vector3.Scale(endpos,new Vector3(10f,1f,10f));
 
             rigid.AddForce(_velocity, ForceMode.VelocityChange);
-            rigid.sleepThreshold = 5f;
         }
-    
-        if (rigid.IsSleeping())
-        {
-            transform.position = new Vector3(0, transform.position.y, 0);
-        }
+
+        StartCoroutine(checkmovement());
     }
 
-
-
-
-    void OnCollisionEnter(Collision collision)
+    IEnumerator checkmovement()
     {
-        if(collision.gameObject.CompareTag("coll"))
+        Vector3 pos = transform.position;
+        yield  return new WaitForSeconds(1);
+        if(pos == transform.position)
         {
-           //eflectProjectile(collision.GetContact(0).normal);   
+            transform.position = new Vector3(0,transform.position.y, 0);
         }
-    }
-
-
-    private void ReflectProjectile( Vector3 reflectVector)
-    {
-                
-            _velocity = Vector3.Reflect(_velocity, reflectVector);
-
-        rigid.velocity = _velocity - rigid.velocity;
-        dampspeed = dampspeed + new Vector3(1f, 1f, 1f);
 
     }
 }
