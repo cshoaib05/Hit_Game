@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GuiController : MonoBehaviour
 {
     public static bool start;
+    public TextMeshProUGUI Scoretext;
 
     [SerializeField] GameObject menupanel;
     [SerializeField] GameObject pausebutton;
