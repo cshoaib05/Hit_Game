@@ -11,13 +11,17 @@ public class Store : MonoBehaviour
     public List<storelement> elements;
     public static int coin;
     public TextMeshProUGUI cointext;
-    public int inuseindex;
+    public static int inuseindex;
     public Sprite yellowimage;
+
+    private void Awake()
+    {
+        coin = PlayerPrefs.GetInt("coin", 0);
+    }
 
 
     public void Start()
     {
-        coin = 1000;
         inuseindex = 0;
         for (int i = 0; i < elements.Count; i++)
         {
