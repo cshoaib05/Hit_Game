@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class startgame : MonoBehaviour
 {
     public Slider slider;
+
     void Start()
     {
         StartCoroutine(Loadlevel());
