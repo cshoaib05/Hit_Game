@@ -17,8 +17,7 @@ public class Movement : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         lr = GetComponent<LineRenderer>();
         lr.enabled = false;
-        cam = Camera.main;
-        
+        cam = Camera.main;    
     }
 
 
@@ -27,7 +26,6 @@ public class Movement : MonoBehaviour
         if(GuiController.start && !isMoving)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -39,13 +37,11 @@ public class Movement : MonoBehaviour
                 lr.useWorldSpace = true;
             }
 
-
             if (Input.GetMouseButton(0))
             {
                 if (Physics.Raycast(ray, out hit, 100))
                 {
                     endpos = new Vector3(hit.point.x * -1f, transform.position.y, hit.point.z * -1f);
-
                 }
             }
 

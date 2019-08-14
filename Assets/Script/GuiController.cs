@@ -43,12 +43,20 @@ public class GuiController : MonoBehaviour
     public void Pausepanellshow()
     {
         Time.timeScale = 0;
+        start = false;
         pausepanel.SetActive(true);
     }
 
     public void settingpanelshow()
     {
-        
         settingpanel.SetActive(true);
     }
+
+    public void resume()
+    {
+        pausepanel.SetActive(false);
+        Time.timeScale = 1;
+        start = true;
+    }
+
 }
