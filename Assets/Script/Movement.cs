@@ -41,21 +41,14 @@ public class Movement : MonoBehaviour
             {
                 if (Physics.Raycast(ray, out hit, 100))
                 {
-                   
-                        endpos = new Vector3(hit.point.x * -1f, transform.position.y, hit.point.z * -1f);
-                    
-                }
-                  
+                    endpos = new Vector3(hit.point.x * -1f, transform.position.y, hit.point.z * -1f);   
+                }     
             }
-
-
             if (Input.GetMouseButtonUp(0))
             {
-               
+
                 lr.enabled = false;
             }
-
-
         }
 
     }
@@ -88,17 +81,13 @@ public class Movement : MonoBehaviour
 
 
             if (Input.GetMouseButtonUp(0))
-            {
-                if (hit.point.x != 0 && hit.point.z != 0)
-                {
+            {             
                     _velocity = Vector3.Scale(endpos, new Vector3(10f, 1f, 10f));
-
                     rigid.AddForce(_velocity, ForceMode.VelocityChange);
                     isMoving = true;
-                }
+                endpos = new Vector3(0,0,0);
             }
 
-            
         }
         StartCoroutine(checkmovement());
         }
