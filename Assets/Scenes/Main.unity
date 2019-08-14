@@ -1025,11 +1025,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1513,7 +1513,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1970560894}
-        m_MethodName: mainmenu
+        m_MethodName: settingclose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5685,11 +5685,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -6229,7 +6229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1285754429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8985,7 +8985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1962769542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9116,7 +9116,7 @@ MonoBehaviour:
     inusetext: {fileID: 1650568334}
     unlocked: 1
     price: 0
-    inusestats: 0
+    inusestats: 1
   - Button: {fileID: 1379103459}
     pricetext: {fileID: 449222675}
     inusetext: {fileID: 1366134320}
@@ -9132,7 +9132,7 @@ MonoBehaviour:
   - Button: {fileID: 676911859}
     pricetext: {fileID: 2103717325}
     inusetext: {fileID: 348273098}
-    unlocked: 1
+    unlocked: 0
     price: 1000
     inusestats: 0
   - Button: {fileID: 1081242363}
@@ -9159,6 +9159,8 @@ MonoBehaviour:
     unlocked: 0
     price: 5000
     inusestats: 0
+  cointext: {fileID: 1128328497}
+  inuseindex: 0
   yellowimage: {fileID: 21300000, guid: 20b3009147894df4e9ff937be6e2fe84, type: 3}
 --- !u!1 &1988952324
 GameObject:

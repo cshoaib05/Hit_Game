@@ -73,6 +73,12 @@ public class GuiController : MonoBehaviour
     public void storehide()
     {
         storepanel.SetActive(false);
+        menupanel.SetActive(true);
     }
 
+    public void settingclose()
+    {
+        settingpanel.SetActive(false);
+        menupanel.SetActive(true);
+    }
 }

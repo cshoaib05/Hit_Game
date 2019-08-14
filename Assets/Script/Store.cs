@@ -10,20 +10,37 @@ public class Store : MonoBehaviour
    public Image Sprite;
     public List<storelement> elements;
     public static int coin;
-
+    public TextMeshProUGUI cointext;
+    public int inuseindex;
     public Sprite yellowimage;
 
 
     public void Start()
     {
         coin = 1000;
+        inuseindex = 0;
         for (int i = 0; i < elements.Count; i++)
         {
-            if(elements[i].unlocked)
+            if (i == inuseindex)
+            {
+                elements[i].Button.image.sprite = yellowimage;
+                elements[i].inusetext.gameObject.SetActive(true);
+            }
+        }
+
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < elements.Count; i++)
+        {
+            if (elements[i].unlocked)
             {
                 elements[i].pricetext.SetActive(false);
             }
         }
+
+        cointext.text = coin.ToString();
     }
 
     public void Button0()
@@ -43,7 +60,7 @@ public class Store : MonoBehaviour
         {
             inusebool(1);
             Inuseimage(1);
-            elements[1].pricetext.SetActive(false);
+          
         }
         else
         {
@@ -143,6 +160,7 @@ public class Store : MonoBehaviour
             if(i==index)
             {
                 elements[i].inusestats = true;
+                inuseindex = i;
             }
             else
             {
