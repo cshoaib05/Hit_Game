@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GuiController : MonoBehaviour
 {
@@ -31,14 +32,11 @@ public class GuiController : MonoBehaviour
 
     public void Play()
     {
+        Time.timeScale = 1;
         start = true;
         menupanel.SetActive(false);
     }
 
-    public void Storepanel()
-    {
-        storepanel.SetActive(true);
-    }
 
     public void Pausepanellshow()
     {
@@ -57,6 +55,22 @@ public class GuiController : MonoBehaviour
         pausepanel.SetActive(false);
         Time.timeScale = 1;
         start = true;
+    }
+
+    public void mainmenu()
+    {
+        pausepanel.SetActive(false);
+        SceneManager.LoadScene(0);
+    }
+
+    public void storeshow()
+    {
+        storepanel.SetActive(true);
+    }
+
+    public void storehide()
+    {
+        storepanel.SetActive(false);
     }
 
 }
