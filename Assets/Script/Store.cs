@@ -203,6 +203,7 @@ public class Store : MonoBehaviour
             {
                 elements[index].unlocked = true;
                 coin = coin - elements[index].price;
+                PlayerPrefs.SetInt("coin", coin);
             }
         }
     }
