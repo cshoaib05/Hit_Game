@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8653318081949723637}
   - component: {fileID: 8653318081949723636}
   - component: {fileID: 8653318081949723639}
+  - component: {fileID: 2526572935710495510}
   m_Layer: 0
   m_Name: BasketBall
   m_TagString: Player
@@ -333,3 +334,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9a7b06356a6944ea07426ae8dc9860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2526572935710495510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653318081949723638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91dfd66a3a4f3c249838f916c707266d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shatter: {fileID: 0}
+  Ballon: {fileID: 1270853734522269461, guid: 5fe5c627c059e784dabec360005bd12d, type: 3}
+  Bottle: {fileID: 4506007440843921743, guid: cc38ad87436cc0540afc5b72b71c5a23, type: 3}
+  Jelly: {fileID: 7186590931110009446, guid: 26b73a4bd45f92b4fae0910f4d1deb65, type: 3}

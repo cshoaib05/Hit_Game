@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6041082473660597651}
   - component: {fileID: 6041082473658606763}
   - component: {fileID: 6041082473658606764}
-  - component: {fileID: 1681258057411949735}
   m_Layer: 0
   m_Name: Jelly_Cube
   m_TagString: jelly
@@ -109,16 +108,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9978658, y: 1.9999999, z: 1.9978659}
   m_Center: {x: 0, y: 0.9999998, z: 0.00000014901163}
---- !u!114 &1681258057411949735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6041082473658604369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91dfd66a3a4f3c249838f916c707266d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shatter: {fileID: 7186590931110009446, guid: 26b73a4bd45f92b4fae0910f4d1deb65, type: 3}

@@ -17,8 +17,9 @@ GameObject:
   - component: {fileID: 3557798964509836641}
   - component: {fileID: 5980477857957455106}
   - component: {fileID: 5264399273435895026}
+  - component: {fileID: 420007894944756909}
   m_Layer: 0
-  m_Name: Shuriken5 1
+  m_Name: Ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,3 +354,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.035495676, y: 0.0016744828, z: 0.033757556}
   m_Center: {x: -0.0000115871435, y: -0.00010674447, z: -0.0017923117}
+--- !u!114 &420007894944756909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373684965978429974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91dfd66a3a4f3c249838f916c707266d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shatter: {fileID: 0}
+  Ballon: {fileID: 1270853734522269461, guid: 5fe5c627c059e784dabec360005bd12d, type: 3}
+  Bottle: {fileID: 4506007440843921743, guid: cc38ad87436cc0540afc5b72b71c5a23, type: 3}
+  Jelly: {fileID: 7186590931110009446, guid: 26b73a4bd45f92b4fae0910f4d1deb65, type: 3}
