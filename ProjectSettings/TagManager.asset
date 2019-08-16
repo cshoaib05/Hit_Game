@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - coll
+  - balls
+  - bottle
+  - jelly
+  - Balloon
   layers:
   - Default
   - TransparentFX

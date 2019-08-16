@@ -13,10 +13,12 @@ public class Store : MonoBehaviour
     public TextMeshProUGUI cointext;
     public static int inuseindex;
     public Sprite yellowimage;
+    public PlayerSelector playerSelector;
 
     private void Awake()
     {
-        coin = PlayerPrefs.GetInt("coin", 0);
+        coin = 500;
+       //coin = PlayerPrefs.GetInt("coin", 0);
     }
 
 
@@ -171,6 +173,7 @@ public class Store : MonoBehaviour
                 elements[i].inusestats = false;
             }
         }
+        playerSelector.playerchange();
     }
 
     void Inuseimage(int index)
