@@ -9,7 +9,7 @@ public class LeveCreater : MonoBehaviour
     public List<GameObject> Tablesready;
     public GameObject Table;
     public static bool iscleared;
-    public int tableindex;
+    public static int tableindex;
     public GameObject SCorePanel;
     public ObstacleControl obstaclecreater;
 
@@ -34,7 +34,7 @@ public class LeveCreater : MonoBehaviour
 
     public void TableChanger()
     {
-        LeveCreater.iscleared = false;
+        iscleared = false;
         Tablesready[tableindex].SetActive(false);
         int i;
         i=Random.Range(0, 11);

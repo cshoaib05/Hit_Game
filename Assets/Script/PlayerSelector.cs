@@ -26,4 +26,12 @@ public class PlayerSelector : MonoBehaviour
    
     }
 
+    private void Update()
+    {
+        if(LeveCreater.iscleared)
+        {
+            playerchange();
+        }
+    }
+
 }

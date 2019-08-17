@@ -16,7 +16,7 @@ public class Shatter : MonoBehaviour
         {
             ObstacleControl.obscount--;
             Destroy(collision.gameObject);
-            shatter = Instantiate(Ballon, transform.position, transform.rotation);
+            shatter = Instantiate(Ballon, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();   
         }
 
@@ -24,7 +24,7 @@ public class Shatter : MonoBehaviour
         {
             ObstacleControl.obscount--;
             Destroy(collision.gameObject);
-            shatter = Instantiate(Jelly, transform.position, transform.rotation);
+            shatter = Instantiate(Jelly, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
         }
 
@@ -34,7 +34,7 @@ public class Shatter : MonoBehaviour
             ObstacleControl.obscount--;
             Destroy(collision.gameObject);
  
-            shatter = Instantiate(Bottle, transform.position, transform.rotation);
+            shatter = Instantiate(Bottle, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
         }
 

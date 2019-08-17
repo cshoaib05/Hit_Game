@@ -37,7 +37,7 @@ public class ObstacleControl : MonoBehaviour
         dict.Add(7, S);
         dict.Add(8, Y);
         dict.Add(9, Z);
-        dict.Add(11, Mismatch);
+        dict.Add(10, Mismatch);
     }
 
     private void Start()
@@ -56,7 +56,7 @@ public class ObstacleControl : MonoBehaviour
         int index;
         Vector3 randompos;
         List<Vector3> list;
-        list = dict[Store.inuseindex];
+        list = dict[LeveCreater.tableindex];
         randompos = list[Random.Range(0, list.Count)];
         index = Random.Range(0, Obstacles.Count);
         gooo= Instantiate(Obstacles[index]);

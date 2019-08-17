@@ -16,7 +16,7 @@ public class Destroyer : MonoBehaviour
             {
                 LeveCreater.iscleared = true;
                 Scorepanel.SetActive(true);
-                Time.timeScale = 0;
+
             }
         }
     }
@@ -25,6 +25,7 @@ public class Destroyer : MonoBehaviour
         if (ObstacleControl.obscount <= 0 && !LeveCreater.iscleared)
         {
             LeveCreater.iscleared = true;
+
             StartCoroutine(Timeleft());
         }
         if(ObstacleControl.obscount >=1)
@@ -37,7 +38,9 @@ public class Destroyer : MonoBehaviour
     IEnumerator Timeleft()
     {
         yield return new WaitForSeconds(3);
+        
         Scorepanel.SetActive(true);
+     
     }
 
 }

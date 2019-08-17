@@ -7274,7 +7274,6 @@ MonoBehaviour:
   - {fileID: 2119922290, guid: eaabb89b0644d3f45a1e1b5ebd296e93, type: 3}
   Tablesready: []
   Table: {fileID: 0}
-  tableindex: 0
   SCorePanel: {fileID: 501509514}
   obstaclecreater: {fileID: 1041003918}
 --- !u!1 &1366134318

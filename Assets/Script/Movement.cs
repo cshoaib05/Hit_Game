@@ -28,6 +28,7 @@ public class Movement : MonoBehaviour
     {
 
         startpos = transform.position;
+
         if (GuiController.start && !isMoving)
         { 
             if (Input.GetMouseButtonDown(0))
@@ -63,21 +64,29 @@ public class Movement : MonoBehaviour
                 
             if (Input.GetMouseButtonUp(0))
             {
-                rigid.constraints = RigidbodyConstraints.FreezePositionY;
+               rigid.constraints = RigidbodyConstraints.FreezePositionY;
 
                 _velocity = Vector3.Scale(force, new Vector3(10f, 1f, 10f));
                 rigid.AddForce(_velocity, ForceMode.VelocityChange);
                 lr.enabled = false;
+                isMoving = true;
                 StartCoroutine(waitforsec());
             }
+        }
+
+
+        if (LeveCreater.iscleared)
+        {
+            rigid.velocity = new Vector3(0, 0, 0);
         }
     }
 
     IEnumerator waitforsec()
     {
-        yield return new WaitForSeconds(10);
+        
+        yield return new WaitForSeconds(5);
+        rigid.constraints = RigidbodyConstraints.None;
         isMoving = false;
-       
         rigid.Sleep();
     }
 
