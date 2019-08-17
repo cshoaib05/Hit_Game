@@ -6,7 +6,6 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody rigid;
     private Vector3 _velocity, prevpos, startpos, endpos,force,nextpos, directionnext;
-    Camera cam;
     LineRenderer lr;
     Ray ray1;
     Plane plane;
@@ -20,7 +19,7 @@ public class Movement : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         lr = GetComponent<LineRenderer>();
         lr.enabled = false;
-        cam = Camera.main;
+      
     }
 
 
@@ -56,7 +55,7 @@ public class Movement : MonoBehaviour
                 if (plane.Raycast(ray1, out distance))
                 {
                     startpos = ray1.GetPoint(distance);
-                    force = new Vector3(startpos.x * -1f, transform.position.y, startpos.z * -1f) + prevpos;
+                    force = new Vector3(startpos.x * -1f, transform.position.y, startpos.z * -1f);
                     lr.SetPosition(1, force);
                 }
             }
@@ -76,7 +75,7 @@ public class Movement : MonoBehaviour
 
     IEnumerator waitforsec()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         isMoving = false;
        
         rigid.Sleep();

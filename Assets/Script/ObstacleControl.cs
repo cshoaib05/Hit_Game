@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObstacleControl : MonoBehaviour
 {
+    public static int obscount;
     public Dictionary<int,List<Vector3>> dict;
     public List<Vector3> square;
     public List<Vector3> octagon;
@@ -23,6 +24,7 @@ public class ObstacleControl : MonoBehaviour
 
     private void Awake()
     {
+        obscount = 0;
         dict = new Dictionary<int, List<Vector3>>();
 
         dict.Add(0, square);
@@ -41,6 +43,11 @@ public class ObstacleControl : MonoBehaviour
     private void Start()
     {
         obstacleplace();
+    }
+
+    private void Update()
+    {
+        print(ObstacleControl.obscount);
     }
 
     public void obstacleplace()

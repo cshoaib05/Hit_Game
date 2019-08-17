@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2817070918364320205}
   m_Layer: 0
   m_Name: 2block
-  m_TagString: Untagged
+  m_TagString: obs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,6 +42,10 @@ PrefabInstance:
     - target: {fileID: 1556997416, guid: 947cf79f363c40245b60f3f055827fe9, type: 3}
       propertyPath: m_Name
       value: block (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556997416, guid: 947cf79f363c40245b60f3f055827fe9, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1556997421, guid: 947cf79f363c40245b60f3f055827fe9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -118,6 +122,10 @@ PrefabInstance:
     - target: {fileID: 1556997416, guid: 947cf79f363c40245b60f3f055827fe9, type: 3}
       propertyPath: m_Name
       value: block
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556997416, guid: 947cf79f363c40245b60f3f055827fe9, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1556997421, guid: 947cf79f363c40245b60f3f055827fe9, type: 3}
       propertyPath: m_LocalPosition.x

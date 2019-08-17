@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6041082473660597651}
   - component: {fileID: 6041082473658606763}
   - component: {fileID: 6041082473658606764}
+  - component: {fileID: 4853460461543409285}
   m_Layer: 0
   m_Name: Jelly_Cube
   m_TagString: jelly
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6041082473658604369}
-  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7144911, y: -0.00096808624, z: 5.5765095}
   m_LocalScale: {x: 0.16549934, y: 0.1437375, z: 0.1437375}
   m_Children: []
@@ -108,3 +109,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9978658, y: 1.9999999, z: 1.9978659}
   m_Center: {x: 0, y: 0.9999998, z: 0.00000014901163}
+--- !u!114 &4853460461543409285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041082473658604369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e1e40d27431c64ea83a949f943646a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

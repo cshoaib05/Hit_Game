@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2088414654294139698}
   - component: {fileID: 2088414654294139699}
   - component: {fileID: 2088414654294139696}
+  - component: {fileID: 3478667454202099611}
   m_Layer: 0
   m_Name: bowlingpin
-  m_TagString: Untagged
+  m_TagString: obs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,3 +111,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9ad3712538f3ea7439daaea2deb04561, type: 3}
+--- !u!114 &3478667454202099611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088414654294139697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e1e40d27431c64ea83a949f943646a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

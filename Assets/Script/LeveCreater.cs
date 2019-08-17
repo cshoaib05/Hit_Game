@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LeveCreater : MonoBehaviour
 {
     public List<GameObject> TableList;
     public List<GameObject> Tablesready;
     public GameObject Table;
+    public static bool iscleared;
     public int tableindex;
+    public GameObject SCorePanel;
+    public ObstacleControl obstaclecreater;
 
     private void Start()
     {
+        iscleared = false;
         tableindex = PlayerPrefs.GetInt("table", 0);
        foreach(GameObject go in TableList)
        {
@@ -29,9 +34,16 @@ public class LeveCreater : MonoBehaviour
 
     public void TableChanger()
     {
+        LeveCreater.iscleared = false;
+        Tablesready[tableindex].SetActive(false);
         int i;
-        i=Random.Range(0, 12);
+        i=Random.Range(0, 11);
         Tablesready[i].SetActive(true);
         tableindex = i;
+        iscleared = false;
+        SCorePanel.SetActive(false);
+        Time.timeScale = 1;
+        obstaclecreater.obstacleplace();
     }
+
 }

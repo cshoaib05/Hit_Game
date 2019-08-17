@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8207352878200981231}
   m_Layer: 0
   m_Name: Vpin
-  m_TagString: Untagged
+  m_TagString: obs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,9 +46,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207352878200981231}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: obs
+      objectReference: {fileID: 0}
     - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_Name
       value: bowlingpin (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1512883105, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -109,9 +117,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207352878200981231}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: obs
+      objectReference: {fileID: 0}
     - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_Name
       value: bowlingpin (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1512883105, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -172,9 +188,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207352878200981231}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: obs
+      objectReference: {fileID: 0}
     - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_Name
       value: bowlingpin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1512883105, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -235,9 +259,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207352878200981231}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: obs
+      objectReference: {fileID: 0}
     - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_Name
       value: bowlingpin (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1512883105, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,9 +330,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207352878200981231}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: obs
+      objectReference: {fileID: 0}
     - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_Name
       value: bowlingpin (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1512883105, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -361,9 +401,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207352878200981231}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: obs
+      objectReference: {fileID: 0}
     - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_Name
       value: bowlingpin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1512883105, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -424,9 +472,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207352878200981231}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: obs
+      objectReference: {fileID: 0}
     - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_Name
       value: bowlingpin (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1512883105, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,9 +543,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207352878200981231}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: obs
+      objectReference: {fileID: 0}
     - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_Name
       value: bowlingpin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1512883105, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -550,9 +614,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8207352878200981231}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: obs
+      objectReference: {fileID: 0}
     - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_Name
       value: bowlingpin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512883100, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
+      propertyPath: m_TagString
+      value: obs
       objectReference: {fileID: 0}
     - target: {fileID: 1512883105, guid: e75f16d1c9003ad40a825a932dac5acb, type: 3}
       propertyPath: m_LocalPosition.x

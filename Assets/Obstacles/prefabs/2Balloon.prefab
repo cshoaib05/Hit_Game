@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1458740110145345109}
   m_Layer: 0
   m_Name: 2Balloon
-  m_TagString: Untagged
+  m_TagString: obs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,13 +99,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3138376212695321986, guid: 6c3e88f40c078dc48997bd36a7c50c18,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.4
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5101641915614047097, guid: 6c3e88f40c078dc48997bd36a7c50c18, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c3e88f40c078dc48997bd36a7c50c18, type: 3}
 --- !u!4 &4590220180373993477 stripped
 Transform:
@@ -180,13 +174,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3138376212695321986, guid: 6c3e88f40c078dc48997bd36a7c50c18,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.4
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5101641915614047097, guid: 6c3e88f40c078dc48997bd36a7c50c18, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c3e88f40c078dc48997bd36a7c50c18, type: 3}
 --- !u!4 &4590220181496290027 stripped
 Transform:
