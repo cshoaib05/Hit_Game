@@ -30,7 +30,7 @@ public class LeveCreater : MonoBehaviour
     public void TableChanger()
     {
         int i;
-        i=Random.Range(0, 4);
+        i=Random.Range(0, 12);
         Tablesready[i].SetActive(true);
         tableindex = i;
     }

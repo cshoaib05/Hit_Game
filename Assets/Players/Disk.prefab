@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1307687057}
   - component: {fileID: 1307687056}
   - component: {fileID: 1307687051}
-  - component: {fileID: 1307687052}
   - component: {fileID: 1307687054}
   - component: {fileID: 1307687055}
   - component: {fileID: 1307687053}
   - component: {fileID: 5466902236833357414}
+  - component: {fileID: 2000504602}
   m_Layer: 0
   m_Name: Disk
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307687050}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.690659, y: 4.690659, z: 4.690659}
   m_Children: []
@@ -100,19 +100,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!65 &1307687052
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307687050}
-  m_Material: {fileID: 13400000, guid: 4c6be7858f4f61d4aba833f3f2286566, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.06053187, y: 0.024865018, z: 0.060531862}
-  m_Center: {x: 0, y: 0.0032415804, z: 0}
 --- !u!120 &1307687054
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -351,3 +338,17 @@ MonoBehaviour:
   Ballon: {fileID: 1270853734522269461, guid: 5fe5c627c059e784dabec360005bd12d, type: 3}
   Bottle: {fileID: 4506007440843921743, guid: cc38ad87436cc0540afc5b72b71c5a23, type: 3}
   Jelly: {fileID: 7186590931110009446, guid: 26b73a4bd45f92b4fae0910f4d1deb65, type: 3}
+--- !u!64 &2000504602
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307687050}
+  m_Material: {fileID: 13400000, guid: 4c6be7858f4f61d4aba833f3f2286566, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: d277a370ad18f404da9a1a59b6a997a5, type: 3}
