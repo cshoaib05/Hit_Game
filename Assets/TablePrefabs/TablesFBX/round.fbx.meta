@@ -10,7 +10,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Table_Round
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: base_mat
+    second: {fileID: 2100000, guid: d959c4fdd8fbf2b4e906047288deaec3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: border
+    second: {fileID: 2100000, guid: db05e8dacec1f9f43b8af58e3bf79a8f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -5,17 +5,18 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody rigid;
-    private Vector3 _velocity, prevpos, startpos, endpos,force,nextpos, directionnext;
+    private Vector3 _velocity, startpos, endpos,force,nextpos, directionnext;
     LineRenderer lr;
     Ray ray1;
     Plane plane;
+    RaycastHit hit;
     public static bool isMoving;
     int index;
     float distance = 0;
 
     void Start()
     {
-        prevpos = new Vector3(0, 0, 0);
+
         isMoving = false;
         rigid = GetComponent<Rigidbody>();
         lr = GetComponent<LineRenderer>();
@@ -31,16 +32,7 @@ public class Movement : MonoBehaviour
         if (GuiController.start && !isMoving)
         { 
             if (Input.GetMouseButtonDown(0))
-            {
-                 ray1 = Camera.main.ScreenPointToRay(Input.mousePosition);
-                plane = new Plane(Vector3.up, transform.position);
-
-                if (plane.Raycast(ray1, out distance))
-                {
-                    prevpos = ray1.GetPoint(distance);
-                    prevpos.y = transform.position.y;
-                }
-                 
+            { 
                 lr.enabled = true;
                 lr.SetPosition(0, startpos);
                 lr.useWorldSpace = true;
@@ -56,7 +48,13 @@ public class Movement : MonoBehaviour
                 {
                     startpos = ray1.GetPoint(distance);
                     force = new Vector3(startpos.x * -1f, transform.position.y, startpos.z * -1f);
-                    lr.SetPosition(1, force);
+                  
+                }
+                Ray ray2 = new Ray(startpos, transform.position);
+                if (Physics.Raycast(ray2,out hit ,1000))
+                {
+                    nextpos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                    lr.SetPosition(1, nextpos);
                 }
             }
 
