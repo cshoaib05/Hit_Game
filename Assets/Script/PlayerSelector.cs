@@ -6,6 +6,7 @@ public class PlayerSelector : MonoBehaviour
 {
     public List<GameObject> PlayersList;
     public GameObject Player;
+    public Materialscontroller materialscontroller;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class PlayerSelector : MonoBehaviour
         {
             Destroy(Player);
             Player = Instantiate(PlayersList[Store.inuseindex], Vector3.zero,Quaternion.identity);
-            
+            materialscontroller.changecolor();
         }
    
     }

@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LeveCreater : MonoBehaviour
 {
+    public TextMeshProUGUI leveltext;
     public List<GameObject> TableList;
     public List<GameObject> Tablesready;
     public GameObject Table;
@@ -13,10 +14,13 @@ public class LeveCreater : MonoBehaviour
     public GameObject SCorePanel;
     public ObstacleControl obstaclecreater;
     public PlayerSelector playerSelector;
+    public static int levelno;
 
     private void Start()
     {
+        levelno = PlayerPrefs.GetInt("level", 1);
         iscleared = false;
+        leveltext.text = "LEVEL " + levelno.ToString();
         tableindex = PlayerPrefs.GetInt("table", 0);
        foreach(GameObject go in TableList)
        {
@@ -41,11 +45,15 @@ public class LeveCreater : MonoBehaviour
         i=Random.Range(0, 11);
         Tablesready[i].SetActive(true);
         tableindex = i;
+        PlayerPrefs.SetInt("table", tableindex);
         iscleared = false;
         SCorePanel.SetActive(false);
         Time.timeScale = 1;
         obstaclecreater.obstacleplace();
         playerSelector.playerchange();
+        levelno++;
+        leveltext.text = "LEVEL " + levelno.ToString();
+        PlayerPrefs.SetInt("level", levelno);
     }
 
 }
