@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     int index;
     float distance = 0;
     void Start()
-    {
+    { 
        
         isMoving = false;
         rigid = GetComponent<Rigidbody>();
@@ -35,6 +35,7 @@ public class Movement : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+               
                 lr.enabled = true;
                 lr.SetPosition(0, startpos);
                 lr.useWorldSpace = true;
@@ -62,6 +63,8 @@ public class Movement : MonoBehaviour
                 
             if (Input.GetMouseButtonUp(0))
             {
+                rigid.constraints = RigidbodyConstraints.FreezePositionY;
+
                 _velocity = Vector3.Scale(force, new Vector3(10f, 1f, 10f));
                 rigid.AddForce(_velocity, ForceMode.VelocityChange);
                 isMoving = true;
@@ -96,7 +99,7 @@ public class Movement : MonoBehaviour
     {
         Ray objray = new Ray(origin, direction);
 
-        if (Physics.Raycast(objray, out colhit,200))
+        if (Physics.Raycast(objray, out colhit,5000))
         {
             nextpos = new Vector3(colhit.point.x, transform.position.y, colhit.point.z);
 

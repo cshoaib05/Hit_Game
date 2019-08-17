@@ -1,33 +1,15 @@
 fileFormatVersion: 2
-guid: 06ed77bd035db8b4a89468006a7d3e8a
+guid: 4db9baa8bbf35f74da6c4060fea30b23
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Camera
-    100002: //RootNode
-    100004: Light
-    100006: Table_Heart
-    100008: Table_Heart.001
-    100010: Table_Heart.002
-    400000: Camera
-    400002: //RootNode
-    400004: Light
-    400006: Table_Heart
-    400008: Table_Heart.001
-    400010: Table_Heart.002
-    2000000: Camera
+    100000: //RootNode
+    400000: //RootNode
     2100000: border
     2100002: base_mat
-    2300000: Table_Heart
-    2300002: Table_Heart.001
-    2300004: Table_Heart.002
-    3300000: Table_Heart
-    3300002: Table_Heart.001
-    3300004: Table_Heart.002
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Table_Heart
-    4300002: Table_Heart.001
-    4300004: Table_Heart.002
-    10800000: Light
   externalObjects: {}
   materials:
     importMaterials: 1

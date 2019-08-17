@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ecc57df93b95bfb4eb4b5f83fa3eeec8
+guid: 355d2691e9ff25b42b1cfa78b87a710a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -9,7 +9,7 @@ ModelImporter:
     2100002: base_mat
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Table_Octagon
+    4300000: Table_S
   externalObjects: {}
   materials:
     importMaterials: 1

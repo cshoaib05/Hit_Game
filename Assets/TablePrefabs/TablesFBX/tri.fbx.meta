@@ -1,48 +1,16 @@
 fileFormatVersion: 2
-guid: 4001baa24c03e0744b263ee71bc08a62
+guid: d26a3ae1c22278b4d89933a2990c57d9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Table_Square
-    100004: Table_Square.001
-    100006: Table_Square.002
-    100008: Table_Square.003
-    100010: Table_Square.004
     400000: //RootNode
-    400002: Table_Square
-    400004: Table_Square.001
-    400006: Table_Square.002
-    400008: Table_Square.003
-    400010: Table_Square.004
     2100000: border
     2100002: base_mat
-    2300000: Table_Square
-    2300002: Table_Square.001
-    2300004: Table_Square.002
-    2300006: Table_Square.003
-    2300008: Table_Square.004
-    3300000: Table_Square
-    3300002: Table_Square.001
-    3300004: Table_Square.002
-    3300006: Table_Square.003
-    3300008: Table_Square.004
-    4300000: Table_Square
-    4300002: Table_Square.001
-    4300004: Table_Square.002
-    4300006: Table_Square.003
-    4300008: Table_Square.004
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: base_mat
-    second: {fileID: 2100000, guid: c1725b867778b64498ecb60ad9286407, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: border
-    second: {fileID: 2100000, guid: 87abecf51eaee394d844f65be5e141af, type: 2}
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Table_Tri
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
