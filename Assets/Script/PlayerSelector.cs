@@ -21,17 +21,12 @@ public class PlayerSelector : MonoBehaviour
        else
         {
             Destroy(Player);
-            Player = Instantiate(PlayersList[Store.inuseindex], PlayersList[Store.inuseindex].transform.position, PlayersList[Store.inuseindex].transform.rotation);
+            Player = Instantiate(PlayersList[Store.inuseindex], Vector3.zero,Quaternion.identity);
+            
         }
    
     }
 
-    private void Update()
-    {
-        if(LeveCreater.iscleared)
-        {
-            playerchange();
-        }
-    }
+
 
 }

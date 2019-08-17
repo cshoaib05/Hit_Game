@@ -12,6 +12,7 @@ public class LeveCreater : MonoBehaviour
     public static int tableindex;
     public GameObject SCorePanel;
     public ObstacleControl obstaclecreater;
+    public PlayerSelector playerSelector;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class LeveCreater : MonoBehaviour
         SCorePanel.SetActive(false);
         Time.timeScale = 1;
         obstaclecreater.obstacleplace();
+        playerSelector.playerchange();
     }
 
 }

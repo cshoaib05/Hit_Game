@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     public static bool isMoving;
     int index;
     float distance = 0;
+
     void Start()
     {
         prevpos = new Vector3(0, 0, 0);
@@ -19,14 +20,12 @@ public class Movement : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         lr = GetComponent<LineRenderer>();
         lr.enabled = false;
-      
     }
 
 
 
     private void FixedUpdate()
     {
-
         startpos = transform.position;
 
         if (GuiController.start && !isMoving)
@@ -74,11 +73,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-
-        if (LeveCreater.iscleared)
-        {
-            rigid.velocity = new Vector3(0, 0, 0);
-        }
+  
     }
 
     IEnumerator waitforsec()

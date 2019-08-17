@@ -10,6 +10,7 @@ TagManager:
   - jelly
   - Balloon
   - obs
+  - coin
   layers:
   - Default
   - TransparentFX
