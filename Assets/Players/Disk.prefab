@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1307687055}
   - component: {fileID: 1307687053}
   - component: {fileID: 5466902236833357414}
-  - component: {fileID: 2000504602}
+  - component: {fileID: 2038712058}
   m_Layer: 0
   m_Name: Disk
   m_TagString: Untagged
@@ -140,8 +140,6 @@ LineRenderer:
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0.13, y: 0.77, z: 1}
-  - {x: 2.39, y: 1.92, z: 1}
-  - {x: 2.39, y: 1.92, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -338,8 +336,8 @@ MonoBehaviour:
   Ballon: {fileID: 1270853734522269461, guid: 5fe5c627c059e784dabec360005bd12d, type: 3}
   Bottle: {fileID: 4506007440843921743, guid: cc38ad87436cc0540afc5b72b71c5a23, type: 3}
   Jelly: {fileID: 7186590931110009446, guid: 26b73a4bd45f92b4fae0910f4d1deb65, type: 3}
---- !u!64 &2000504602
-MeshCollider:
+--- !u!65 &2038712058
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -348,7 +346,6 @@ MeshCollider:
   m_Material: {fileID: 13400000, guid: 4c6be7858f4f61d4aba833f3f2286566, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: d277a370ad18f404da9a1a59b6a997a5, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.06053187, y: 0.025027474, z: 0.060531862}
+  m_Center: {x: 0, y: 0.0031603489, z: 0}

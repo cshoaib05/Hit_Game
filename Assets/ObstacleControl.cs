@@ -17,8 +17,6 @@ public class ObstacleControl : MonoBehaviour
     public List<Vector3> Z;
     public List<Vector3> Mismatch;
 
-
-    public List<GameObject> objready;
     public List<GameObject> Obstacles;
         
 
@@ -42,32 +40,19 @@ public class ObstacleControl : MonoBehaviour
 
     private void Start()
     {
-        objready = new List<GameObject>();
-        foreach(GameObject go in Obstacles)
-        {
-            GameObject gor = Instantiate(go);
-            gor.SetActive(false);
-            objready.Add(gor);
-        }
-        foreach (GameObject go in Obstacles)
-        {
-            GameObject gor = Instantiate(go);
-            gor.SetActive(false);
-            objready.Add(gor);
-        }
         obstacleplace();
     }
 
     public void obstacleplace()
     {
+        GameObject gooo;
         int index;
         Vector3 randompos;
         List<Vector3> list;
         list = dict[Store.inuseindex];
         randompos = list[Random.Range(0, list.Count)];
-        print(objready.Count);
-        index = Random.Range(0, objready.Count);
-        objready[index].SetActive(true);
-        objready[index].transform.position = randompos;
+        index = Random.Range(0, Obstacles.Count);
+        gooo= Instantiate(Obstacles[index]);
+        gooo.transform.position = randompos;
     }
 }

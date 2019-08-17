@@ -13,23 +13,26 @@ public class Shatter : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Balloon"))
         {
-            collision.gameObject.SetActive(false);
+            Destroy(collision.gameObject);
             shatter = Instantiate(Ballon, transform.position, transform.rotation);
             Destroy(shatter, 2);
         }
 
         if (collision.gameObject.CompareTag("jelly"))
         {
-            collision.gameObject.SetActive(false);
+            Destroy(collision.gameObject);
             shatter = Instantiate(Jelly, transform.position, transform.rotation);
             Destroy(shatter, 2);
         }
         if (collision.gameObject.CompareTag("bottle"))
         {
-            collision.gameObject.SetActive(false);
-            shatter= Instantiate(Bottle, transform.position, transform.rotation);
+            Destroy(collision.gameObject);
+            shatter = Instantiate(Bottle, transform.position, transform.rotation);
             Destroy(shatter, 2);
         }
 
     }
+//    Pull to aim and shoot
+//   next level
+
 }

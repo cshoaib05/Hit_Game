@@ -9,6 +9,7 @@ TagManager:
   - bottle
   - jelly
   - Balloon
+  - obs
   layers:
   - Default
   - TransparentFX
