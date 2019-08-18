@@ -115,10 +115,12 @@ public class GuiController : MonoBehaviour
         if(toggle.isOn)
         {
             PlayerPrefs.SetInt("vibrate", 1);
+            vibrate = 1;
         }
         else
         {
             PlayerPrefs.SetInt("vibrate", 0);
+            vibrate = 0;
         }
     }
 
