@@ -19,7 +19,7 @@ public class ObstacleControl : MonoBehaviour
     public List<Vector3> Mismatch;
 
     public List<GameObject> Obstacles;
-        
+    public GameObject coin;    
 
 
     private void Awake()
@@ -61,5 +61,16 @@ public class ObstacleControl : MonoBehaviour
         index = Random.Range(0, Obstacles.Count);
         gooo= Instantiate(Obstacles[index]);
         gooo.transform.position = randompos;
+        for(int i = 0; i<=Random.Range(2,4); i++)
+        {
+            randompos = list[Random.Range(0, list.Count)];
+            coinplace(randompos);
+        }
+    
     }
+
+     void coinplace(Vector3 pos)
+     {
+        Instantiate(coin, pos, coin.transform.rotation);
+     }
 }
