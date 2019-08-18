@@ -17,7 +17,8 @@ public class Shatter : MonoBehaviour
             ObstacleControl.obscount--;
             Destroy(collision.gameObject);
             shatter = Instantiate(Ballon, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
-            Destroyobj();   
+            Destroyobj();
+            Handheld.Vibrate();
         }
 
         if (collision.gameObject.CompareTag("jelly"))
@@ -26,6 +27,7 @@ public class Shatter : MonoBehaviour
             Destroy(collision.gameObject);
             shatter = Instantiate(Jelly, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
+            Handheld.Vibrate();
         }
 
 
@@ -36,6 +38,7 @@ public class Shatter : MonoBehaviour
  
             shatter = Instantiate(Bottle, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
+            Handheld.Vibrate();
         }
 
     }

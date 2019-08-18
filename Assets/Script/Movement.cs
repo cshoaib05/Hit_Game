@@ -24,6 +24,13 @@ public class Movement : MonoBehaviour
     }
 
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("obs"))
+        {
+            Handheld.Vibrate();
+        }
+    }
 
     private void FixedUpdate()
     {
