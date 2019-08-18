@@ -7,7 +7,11 @@ public class Materialscontroller : MonoBehaviour
     public ParticleSystem winparticles;
     public static bool isplyaed;
     public Material basecolor;
+   
     public Material bordercolor;
+
+    public Material diskbase;
+    public Material diskbody;
 
     public Color[] Base;
     public Color[] Border;
@@ -24,6 +28,9 @@ public class Materialscontroller : MonoBehaviour
         basecolor.color = Base[i];
         bordercolor.color = Border[i];
         cam.backgroundColor = Bgcolor[i];
+        i = Random.Range(0, 5);
+        diskbase.color = Base[i];
+        diskbody.color = Border[i];
     }
 
     private void Update()

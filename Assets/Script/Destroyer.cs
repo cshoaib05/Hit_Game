@@ -1,21 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Destroyer : MonoBehaviour
 {
     public GameObject Scorepanel;
     public Camerashake camerashake;
     public ParticleSystem winparticle;
-
+    public TextMeshProUGUI animtext;
+    public Animator anim;
+   
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("obs"))
+
+        if (collision.gameObject.CompareTag("obs"))
         {
             GuiController.score = GuiController.score + 100;
             Destroy(collision.gameObject);
             ObstacleControl.obscount--;
-            if(ObstacleControl.obscount <=0)
+            playy();
+            if (ObstacleControl.obscount <=0)
             {
                 LeveCreater.iscleared = true;
                 StartCoroutine(Timeleft());
@@ -27,6 +32,7 @@ public class Destroyer : MonoBehaviour
             GuiController.score = GuiController.score + 100;
             Destroy(collision.gameObject);
             ObstacleControl.obscount--;
+            playy();
             if (ObstacleControl.obscount <= 0)
             {
                 LeveCreater.iscleared = true;
@@ -50,6 +56,25 @@ public class Destroyer : MonoBehaviour
         yield return new WaitForSeconds(3);
         Scorepanel.SetActive(true);
      
+    }
+
+    void playy()
+    {
+        if(ObstacleControl.obscount%4==0)
+        {
+            animtext.text = "AWESOME";
+        }
+        if (ObstacleControl.obscount%3==0)
+        {
+            animtext.text = "GREAT";
+        }
+        if (ObstacleControl.obscount%5==0)
+        {
+            animtext.text = "BLAST!!";
+        }
+      
+        anim.Play("TextAnim");
+  
     }
 
 }
