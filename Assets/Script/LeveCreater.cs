@@ -15,6 +15,7 @@ public class LeveCreater : MonoBehaviour
     public ObstacleControl obstaclecreater;
     public PlayerSelector playerSelector;
     public static int levelno;
+    public GameObject Scoretext;
 
     private void Start()
     {
@@ -41,6 +42,7 @@ public class LeveCreater : MonoBehaviour
     {
         LeveCreater.iscleared = false;
         GuiController.check = false;
+        Scoretext.SetActive(false);
         SCorePanel.SetActive(false);
         Tablesready[tableindex].SetActive(false);
         int i;

@@ -8,7 +8,9 @@ public class GuiController : MonoBehaviour
 {
     public static bool start;
     public TextMeshProUGUI Scoretext;
-
+    public TextMeshProUGUI Scoretextpause;
+    public TextMeshProUGUI ScoretextFinal;
+    public static int score;
     [SerializeField] GameObject menupanel;
     [SerializeField] GameObject pausebutton;
     [SerializeField] GameObject storepanel;
@@ -20,7 +22,8 @@ public class GuiController : MonoBehaviour
     void Awake()
     {
         check = false;
-        start = false; 
+        start = false;
+        Scoretext.enabled = false;
     }
 
     private void Update()
@@ -39,13 +42,19 @@ public class GuiController : MonoBehaviour
         {
             pausebutton.SetActive(true); 
         }
+
+        Scoretext.text = score.ToString();
+        Scoretextpause.text = Scoretext.text;
+        ScoretextFinal.text = Scoretext.text;
     }
 
     public void Play()
     {
         Time.timeScale = 1;
         start = true;
+        score = 0;
         menupanel.SetActive(false);
+        Scoretext.enabled = true;
     }
 
 
@@ -94,6 +103,8 @@ public class GuiController : MonoBehaviour
     IEnumerator timewait()
     {
         yield return new WaitForSeconds(3);
-        Scorepanel.SetActive(true)
-;    }
+        Scorepanel.SetActive(true);
+    }
+
+
 }
