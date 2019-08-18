@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -18,9 +19,12 @@ public class GuiController : MonoBehaviour
     [SerializeField] GameObject settingpanel;
     [SerializeField] GameObject Scorepanel;
     public static bool check;
+    public static int vibrate;
+    public Toggle toggle;
 
     void Awake()
     {
+        vibrate = PlayerPrefs.GetInt("vibrate", 1);
         check = false;
         start = false;
         Scoretext.enabled = false;
@@ -106,5 +110,16 @@ public class GuiController : MonoBehaviour
         Scorepanel.SetActive(true);
     }
 
+    public void Vibrate()
+    {
+        if(toggle.isOn)
+        {
+            PlayerPrefs.SetInt("vibrate", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("vibrate", 0);
+        }
+    }
 
 }

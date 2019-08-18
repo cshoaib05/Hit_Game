@@ -19,7 +19,11 @@ public class Shatter : MonoBehaviour
             Destroy(collision.gameObject);
             shatter = Instantiate(Ballon, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
-            Handheld.Vibrate();
+            if(GuiController.vibrate ==1)
+            {
+                Handheld.Vibrate();
+            }
+
             scoreinscrease();
             
         }
@@ -30,7 +34,10 @@ public class Shatter : MonoBehaviour
             Destroy(collision.gameObject);
             shatter = Instantiate(Jelly, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
-            Handheld.Vibrate();
+            if (GuiController.vibrate == 1)
+            {
+                Handheld.Vibrate();
+            }
             scoreinscrease();
         }
 
@@ -42,7 +49,10 @@ public class Shatter : MonoBehaviour
  
             shatter = Instantiate(Bottle, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
-            Handheld.Vibrate();
+            if (GuiController.vibrate == 1)
+            {
+                Handheld.Vibrate();
+            }
             scoreinscrease();
         }
 
