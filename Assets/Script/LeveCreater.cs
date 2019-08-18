@@ -46,7 +46,8 @@ public class LeveCreater : MonoBehaviour
         SCorePanel.SetActive(false);
         Tablesready[tableindex].SetActive(false);
         int i;
-        i=Random.Range(0, 11);
+        Materialscontroller.isplyaed = false;
+        i =Random.Range(0, 11);
         Tablesready[i].SetActive(true);
         tableindex = i;
         PlayerPrefs.SetInt("table", tableindex);

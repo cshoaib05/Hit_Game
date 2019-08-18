@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 803346462}
   - component: {fileID: 803346464}
   - component: {fileID: 803346461}
-  - component: {fileID: 5161299656592126314}
+  - component: {fileID: 7188594152422140249}
+  - component: {fileID: 4187166496476433218}
   m_Layer: 0
   m_Name: Coin
   m_TagString: coin
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803346460}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8.074761, y: 8.074761, z: 8.074761}
   m_Children: []
@@ -98,17 +99,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &5161299656592126314
-MeshCollider:
+--- !u!114 &7188594152422140249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803346460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d4fc761b49e9e4486d9f05c3517df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4187166496476433218
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803346460}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 37ccba6226708254ca19ca3695efc55a, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.026000002, y: 0.04460693, z: 0.0025000006}
+  m_Center: {x: 0, y: 0.0036965616, z: 0}

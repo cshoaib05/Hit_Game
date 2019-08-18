@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Materialscontroller : MonoBehaviour
 {
+    public ParticleSystem winparticles;
+    public static bool isplyaed;
     public Material basecolor;
     public Material bordercolor;
 
@@ -11,7 +13,10 @@ public class Materialscontroller : MonoBehaviour
     public Color[] Border;
     public Color[] Bgcolor;
     public Camera cam;
-
+    private void Start()
+    {
+        isplyaed = false;
+    }
     public void changecolor()
     {
         int i;
@@ -21,4 +26,12 @@ public class Materialscontroller : MonoBehaviour
         cam.backgroundColor = Bgcolor[i];
     }
 
+    private void Update()
+    {
+        if(ObstacleControl.obscount<=0 && !isplyaed)
+        {
+            winparticles.Play();
+            isplyaed = true;
+        }
+    }
 }

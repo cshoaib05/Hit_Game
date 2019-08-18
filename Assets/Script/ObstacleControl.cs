@@ -25,19 +25,20 @@ public class ObstacleControl : MonoBehaviour
     private void Awake()
     {
         obscount = 0;
-        dict = new Dictionary<int, List<Vector3>>();
-
-        dict.Add(0, square);
-        dict.Add(1, octagon);
-        dict.Add(2, tri);
-        dict.Add(3, I);
-        dict.Add(4, round);
-        dict.Add(5, oval);
-        dict.Add(6, heart);
-        dict.Add(7, S);
-        dict.Add(8, Y);
-        dict.Add(9, Z);
-        dict.Add(10, Mismatch);
+        dict = new Dictionary<int, List<Vector3>>
+        {
+            { 0, square },
+            { 1, octagon },
+            { 2, tri },
+            { 3, I },
+            { 4, round },
+            { 5, oval },
+            { 6, heart },
+            { 7, S },
+            { 8, Y },
+            { 9, Z },
+            { 10, Mismatch }
+        };
     }
 
     private void Start()
@@ -45,12 +46,17 @@ public class ObstacleControl : MonoBehaviour
         obstacleplace();
     }
 
-    private void Update()
-    {
-        print(ObstacleControl.obscount);
-    }
 
     public void obstacleplace()
+    {
+        for(int i=0; i<=Random.Range(2,3);i++)
+        {
+            place();
+        }
+     
+    }
+
+    void place()
     {
         GameObject gooo;
         int index;
@@ -59,17 +65,14 @@ public class ObstacleControl : MonoBehaviour
         list = dict[LeveCreater.tableindex];
         randompos = list[Random.Range(0, list.Count)];
         index = Random.Range(0, Obstacles.Count);
-        gooo= Instantiate(Obstacles[index]);
+        gooo = Instantiate(Obstacles[index]);
         gooo.transform.position = randompos;
-        for(int i = 0; i<=Random.Range(2,4); i++)
-        {
-            randompos = list[Random.Range(0, list.Count)];
-            coinplace(randompos);
-        }
-    
+        randompos = list[Random.Range(0, list.Count)];
+        coinplace(randompos);
+
     }
 
-     void coinplace(Vector3 pos)
+    void coinplace(Vector3 pos)
      {
         Instantiate(coin, pos, coin.transform.rotation);
      }

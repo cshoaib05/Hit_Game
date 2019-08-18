@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class coincollector : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         gameObject.SetActive(false);
-        Store.coin = Store.coin++;
+        Store.coin++;
     }
 
 }

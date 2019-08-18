@@ -6,6 +6,7 @@ public class Destroyer : MonoBehaviour
 {
     public GameObject Scorepanel;
     public Camerashake camerashake;
+    public ParticleSystem winparticle;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -38,6 +39,12 @@ public class Destroyer : MonoBehaviour
 
     IEnumerator Timeleft()
     {
+        if (!Materialscontroller.isplyaed)
+        {
+            winparticle.Play();
+            Materialscontroller.isplyaed = true;
+        }
+     
         camerashake.Shake();
         yield return new WaitForSeconds(3);
         Scorepanel.SetActive(true);

@@ -45,7 +45,6 @@ public class Store : MonoBehaviour
                 elements[i].pricetext.SetActive(false);
             }
         }
-
         cointext.text = coin.ToString();
     }
 
