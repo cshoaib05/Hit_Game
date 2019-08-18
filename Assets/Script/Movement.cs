@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody rigid;
-    private Vector3 _velocity, startpos, endpos,force,nextpos, directionnext;
+    private Vector3 _velocity, startpos, force, firsttouch,scndtouch,ogpos;
     LineRenderer lr;
     Ray ray1;
     Plane plane;
@@ -30,9 +30,10 @@ public class Movement : MonoBehaviour
         startpos = transform.position;
 
         if (GuiController.start && !isMoving)
-        { 
+        {
             if (Input.GetMouseButtonDown(0))
-            { 
+            {
+
                 lr.enabled = true;
                 lr.SetPosition(0, startpos);
                 lr.useWorldSpace = true;
@@ -43,44 +44,40 @@ public class Movement : MonoBehaviour
             {
                 ray1 = Camera.main.ScreenPointToRay(Input.mousePosition);
                 plane = new Plane(Vector3.up, transform.position);
-
                 if (plane.Raycast(ray1, out distance))
                 {
-                    startpos = ray1.GetPoint(distance);
-                    force = new Vector3(startpos.x * -1f, transform.position.y, startpos.z * -1f);
-                  
+                    scndtouch = ray1.GetPoint(distance);
+                    firsttouch = transform.position;
+                    ogpos = scndtouch - firsttouch;
+                   force = new Vector3( ogpos.x* -1f, transform.position.y,ogpos.z * -1f);
+
                 }
-                Ray ray2 = new Ray(startpos, transform.position);
-                if (Physics.Raycast(ray2,out hit ,1000))
-                {
-                    nextpos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
-                    lr.SetPosition(1, nextpos);
-                }
+                _velocity = Vector3.Scale(force, new Vector3(10f, 1f, 10f));
+                lr.SetPosition(1, _velocity);
             }
 
-                
+
             if (Input.GetMouseButtonUp(0))
             {
-               rigid.constraints = RigidbodyConstraints.FreezePositionY;
-
-                _velocity = Vector3.Scale(force, new Vector3(10f, 1f, 10f));
+                rigid.constraints = RigidbodyConstraints.FreezePositionY;
                 rigid.AddForce(_velocity, ForceMode.VelocityChange);
                 lr.enabled = false;
                 isMoving = true;
-                StartCoroutine(waitforsec());
+               
             }
         }
-
-  
+        StartCoroutine(waitforsec());
     }
 
     IEnumerator waitforsec()
     {
         
-        yield return new WaitForSeconds(5);
-        rigid.constraints = RigidbodyConstraints.None;
-        isMoving = false;
-        rigid.Sleep();
+        yield return new WaitForSeconds(1);
+        if(rigid.IsSleeping())
+        {
+            isMoving = false;
+            rigid.constraints = RigidbodyConstraints.None;
+        }
     }
 
 }
