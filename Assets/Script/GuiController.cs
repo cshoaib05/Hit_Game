@@ -14,14 +14,23 @@ public class GuiController : MonoBehaviour
     [SerializeField] GameObject storepanel;
     [SerializeField] GameObject pausepanel;
     [SerializeField] GameObject settingpanel;
-       
+    [SerializeField] GameObject Scorepanel;
+    public static bool check;
+
     void Awake()
     {
+        check = false;
         start = false; 
     }
 
     private void Update()
     {
+        if(LeveCreater.iscleared && !check)
+        {
+            StartCoroutine(timewait());
+            check = true;
+        }
+
         if(!start)
         {
             pausebutton.SetActive(false);
@@ -81,4 +90,10 @@ public class GuiController : MonoBehaviour
         settingpanel.SetActive(false);
         menupanel.SetActive(true);
     }
+
+    IEnumerator timewait()
+    {
+        yield return new WaitForSeconds(3);
+        Scorepanel.SetActive(true)
+;    }
 }

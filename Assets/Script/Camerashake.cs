@@ -25,7 +25,7 @@ public class Camerashake : MonoBehaviour
 
     public void Shake()
     {
-        shakeDuration = 0.5f;
+        shakeDuration = 0.2f;
     }
 
     void Update()

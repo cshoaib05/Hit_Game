@@ -40,6 +40,7 @@ public class LeveCreater : MonoBehaviour
     public void TableChanger()
     {
         LeveCreater.iscleared = false;
+        GuiController.check = false;
         SCorePanel.SetActive(false);
         Tablesready[tableindex].SetActive(false);
         int i;

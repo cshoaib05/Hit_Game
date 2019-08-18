@@ -414,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1529346900646540, guid: f84c9d08380504b3cacfb91e6a345927, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4282450904195556, guid: f84c9d08380504b3cacfb91e6a345927, type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,6 +476,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lengthInSec
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 198146951261414848, guid: f84c9d08380504b3cacfb91e6a345927,
+        type: 3}
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84c9d08380504b3cacfb91e6a345927, type: 3}
@@ -10070,6 +10075,7 @@ MonoBehaviour:
   storepanel: {fileID: 1285754428}
   pausepanel: {fileID: 1988952324}
   settingpanel: {fileID: 2048824612}
+  Scorepanel: {fileID: 501509514}
 --- !u!114 &1970560895
 MonoBehaviour:
   m_ObjectHideFlags: 0

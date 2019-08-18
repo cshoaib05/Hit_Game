@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class InitCount : MonoBehaviour
 {
+
     private void Awake()
     {
+      
         ObstacleControl.obscount++;
     }
 
- 
 }
