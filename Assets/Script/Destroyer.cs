@@ -11,9 +11,22 @@ public class Destroyer : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("obs"))
         {
+            GuiController.score = GuiController.score + 100;
             Destroy(collision.gameObject);
             ObstacleControl.obscount--;
             if(ObstacleControl.obscount <=0)
+            {
+                LeveCreater.iscleared = true;
+                StartCoroutine(Timeleft());
+            }
+        }
+
+        if(collision.gameObject.CompareTag("Balloon") || collision.gameObject.CompareTag("jelly")|| collision.gameObject.CompareTag("bottle"))
+        {
+            GuiController.score = GuiController.score + 100;
+            Destroy(collision.gameObject);
+            ObstacleControl.obscount--;
+            if (ObstacleControl.obscount <= 0)
             {
                 LeveCreater.iscleared = true;
                 StartCoroutine(Timeleft());

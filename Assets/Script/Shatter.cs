@@ -20,6 +20,8 @@ public class Shatter : MonoBehaviour
             shatter = Instantiate(Ballon, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
             Handheld.Vibrate();
+            scoreinscrease();
+            
         }
 
         if (collision.gameObject.CompareTag("jelly"))
@@ -29,6 +31,7 @@ public class Shatter : MonoBehaviour
             shatter = Instantiate(Jelly, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
             Handheld.Vibrate();
+            scoreinscrease();
         }
 
 
@@ -40,6 +43,7 @@ public class Shatter : MonoBehaviour
             shatter = Instantiate(Bottle, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroyobj();
             Handheld.Vibrate();
+            scoreinscrease();
         }
 
     }
@@ -52,7 +56,13 @@ public class Shatter : MonoBehaviour
             LeveCreater.iscleared = true;
         }
     }
+
+
+    void scoreinscrease()
+    {
+        GuiController.score = GuiController.score + 100;
+    }
     //    Pull to aim and shoot
-    //   next level
+
 
 }
