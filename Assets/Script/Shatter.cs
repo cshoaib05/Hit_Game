@@ -18,7 +18,7 @@ public class Shatter : MonoBehaviour
             ObstacleControl.obscount--;
             Destroy(collision.gameObject);
             shatter = Instantiate(Ballon, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
-            Destroyobj();
+            Destroy(shatter, 0.5f);
             if(GuiController.vibrate ==1)
             {
                 Handheld.Vibrate();

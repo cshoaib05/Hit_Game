@@ -35,7 +35,6 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         startpos = transform.position;
-
         if (GuiController.start && !isMoving)
         {
             if (Input.GetMouseButtonDown(0))
@@ -66,11 +65,12 @@ public class Movement : MonoBehaviour
 
             if (Input.GetMouseButtonUp(0))
             {
-                rigid.constraints = RigidbodyConstraints.FreezePositionY;
+                rigid.constraints = RigidbodyConstraints.FreezePositionY| RigidbodyConstraints.FreezeRotation;
+                
                 rigid.AddForce(_velocity, ForceMode.VelocityChange);
                 lr.enabled = false;
                 isMoving = true;
-               
+                        
             }
         }
         StartCoroutine(waitforsec());
@@ -83,9 +83,11 @@ public class Movement : MonoBehaviour
         if(rigid.IsSleeping())
         {
             isMoving = false;
-            rigid.constraints = RigidbodyConstraints.None;
         }
     }
+
+
+
 
 
 }
