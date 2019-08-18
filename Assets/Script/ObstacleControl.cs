@@ -19,11 +19,12 @@ public class ObstacleControl : MonoBehaviour
     public List<Vector3> Mismatch;
 
     public List<GameObject> Obstacles;
-    public GameObject coin;    
-
+    public GameObject coin;
 
     private void Awake()
     {
+        obscount = 0;
+        PlayerPrefs.SetInt("level", 4);
         obscount = 0;
         dict = new Dictionary<int, List<Vector3>>
         {
@@ -49,11 +50,17 @@ public class ObstacleControl : MonoBehaviour
 
     public void obstacleplace()
     {
-        for(int i=0; i<=Random.Range(2,3);i++)
+        if(!LeveCreater.isbonus)
         {
-            place();
+            for (int i = 0; i <= Random.Range(2, 3); i++)
+            {
+                place();
+            }
         }
-     
+        else
+        {
+            placebonus();
+        }
     }
 
     void place()
@@ -72,8 +79,25 @@ public class ObstacleControl : MonoBehaviour
 
     }
 
+   
     void coinplace(Vector3 pos)
      {
         Instantiate(coin, pos, coin.transform.rotation);
      }
+
+    void placebonus()
+    {
+        List<Vector3> list;
+        list = dict[LeveCreater.tableindex];
+        foreach (Vector3 po in list)
+        {
+            Instantiate(coin, po, coin.transform.rotation);
+        }
+    }
+
+    private void Update()
+    {
+        print(obscount);
+    }
+
 }

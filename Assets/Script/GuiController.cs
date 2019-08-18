@@ -32,11 +32,12 @@ public class GuiController : MonoBehaviour
 
     private void Update()
     {
-        if(LeveCreater.iscleared && !check)
+        if(LeveCreater.iscleared && !check ) 
         {
             StartCoroutine(timewait());
             check = true;
         }
+        
 
         if(!start)
         {

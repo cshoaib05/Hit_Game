@@ -4,10 +4,28 @@ using UnityEngine;
 
 public class coincollector : MonoBehaviour
 {
+
+    private void Start()
+    {
+
+        if(LeveCreater.isbonus)
+        {
+          ObstacleControl.obscount++;
+        }
+      
+    }
     private void OnTriggerEnter(Collider other)
     {
-        gameObject.SetActive(false);
         Store.coin++;
+        if(LeveCreater.isbonus)
+        {
+            ObstacleControl.obscount--;
+            if(ObstacleControl.obscount<=0)
+            {
+                LeveCreater.iscleared = true;
+            }
+        }
+        Destroy(gameObject);
     }
 
 }

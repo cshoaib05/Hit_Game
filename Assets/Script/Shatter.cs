@@ -13,6 +13,7 @@ public class Shatter : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+ 
         if (collision.gameObject.CompareTag("Balloon"))
         {
             ObstacleControl.obscount--;
@@ -57,6 +58,8 @@ public class Shatter : MonoBehaviour
         }
 
     }
+
+
 
     public void Destroyobj()
     {

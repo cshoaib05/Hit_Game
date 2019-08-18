@@ -15,10 +15,12 @@ public class LeveCreater : MonoBehaviour
     public ObstacleControl obstaclecreater;
     public PlayerSelector playerSelector;
     public static int levelno;
-
+    public static bool isbonus;
+  
 
     private void Start()
     {
+        isbonus = false;
         levelno = PlayerPrefs.GetInt("level", 1);
         iscleared = false;
         leveltext.text = "LEVEL " + levelno.ToString();
@@ -40,7 +42,9 @@ public class LeveCreater : MonoBehaviour
 
     public void TableChanger()
     {
+
         LeveCreater.iscleared = false;
+        isbonus = false;
         GuiController.check = false;
         Movement.done = false;
         SCorePanel.SetActive(false);
@@ -53,11 +57,22 @@ public class LeveCreater : MonoBehaviour
         PlayerPrefs.SetInt("table", tableindex);
         GuiController.score = 0;
         Time.timeScale = 1;
+        levelno++;
+        PlayerPrefs.SetInt("level", levelno);
+        if (levelno%5!=0)
+        {
+            leveltext.text = "LEVEL " + levelno.ToString();
+        }
+        else
+        {
+            isbonus = true;
+            leveltext.text = " BONUS LEVEL ";
+           
+        }
         obstaclecreater.obstacleplace();
         playerSelector.playerchange();
-        levelno++;
-        leveltext.text = "LEVEL " + levelno.ToString();
-        PlayerPrefs.SetInt("level", levelno);
+
+
     }
 
 }
