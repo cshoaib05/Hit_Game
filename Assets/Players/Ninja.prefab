@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 373684965978429974}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e82b2ee6bd0963c4b95bb2b3ce3064f3, type: 3}
-  m_Controller: {fileID: 9100000, guid: 792d08a5e2256794d898f5bde7502a84, type: 2}
+  m_Controller: {fileID: 9100000, guid: dee0f7f969d3b6649a6b084e347208c2, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -247,8 +247,6 @@ LineRenderer:
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0.13, y: 0.77, z: 1}
-  - {x: 2.39, y: 1.92, z: 1}
-  - {x: 2.39, y: 1.92, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -352,8 +350,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.035495676, y: 0.0016744828, z: 0.033757556}
-  m_Center: {x: -0.0000115871435, y: -0.00010674447, z: -0.0017923117}
+  m_Size: {x: 0.012445875, y: 0.0016744835, z: 0.0147657525}
+  m_Center: {x: -0.00039262426, y: -0.000106744475, z: 0.00027096272}
 --- !u!114 &420007894944756909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,3 +369,4 @@ MonoBehaviour:
   Bottle: {fileID: 4506007440843921743, guid: cc38ad87436cc0540afc5b72b71c5a23, type: 3}
   Jelly: {fileID: 7186590931110009446, guid: 26b73a4bd45f92b4fae0910f4d1deb65, type: 3}
   Scorepanel: {fileID: 0}
+  camerashake: {fileID: 0}

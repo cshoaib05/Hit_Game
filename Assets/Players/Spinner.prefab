@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 599611634}
   - component: {fileID: 599611635}
   - component: {fileID: 530037803437924789}
+  - component: {fileID: 586898048}
   m_Layer: 0
   m_Name: Spinner
   m_TagString: Player
@@ -64,8 +65,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.3673751, y: 1, z: 3.2812726}
-  m_Center: {x: -0.06323973, y: 0, z: -0.38165838}
+  m_Size: {x: 1.6706135, y: 1, z: 1.5430931}
+  m_Center: {x: -0.07221095, y: 0, z: 0.015308574}
 --- !u!120 &599611634
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -106,8 +107,6 @@ LineRenderer:
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0.13, y: 0.77, z: 1}
-  - {x: 2.39, y: 1.92, z: 1}
-  - {x: 2.39, y: 1.92, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -201,6 +200,26 @@ MonoBehaviour:
   Bottle: {fileID: 4506007440843921743, guid: cc38ad87436cc0540afc5b72b71c5a23, type: 3}
   Jelly: {fileID: 7186590931110009446, guid: 26b73a4bd45f92b4fae0910f4d1deb65, type: 3}
   Scorepanel: {fileID: 0}
+  camerashake: {fileID: 0}
+--- !u!95 &586898048
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599611630}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dee0f7f969d3b6649a6b084e347208c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &601798295
 GameObject:
   m_ObjectHideFlags: 0

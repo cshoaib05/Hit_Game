@@ -256,8 +256,6 @@ LineRenderer:
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0.13, y: 0.77, z: 1}
-  - {x: 2.39, y: 1.92, z: 1}
-  - {x: 2.39, y: 1.92, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -351,3 +349,4 @@ MonoBehaviour:
   Bottle: {fileID: 4506007440843921743, guid: cc38ad87436cc0540afc5b72b71c5a23, type: 3}
   Jelly: {fileID: 7186590931110009446, guid: 26b73a4bd45f92b4fae0910f4d1deb65, type: 3}
   Scorepanel: {fileID: 0}
+  camerashake: {fileID: 0}

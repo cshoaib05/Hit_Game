@@ -1,22 +1,23 @@
 fileFormatVersion: 2
-guid: 4e50df1cd35866c419a97b1743100c46
+guid: b380fcd0a4928df469f49d667d1d09da
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: boomerang
-    400000: //RootNode
-    400002: boomerang
-    2100000: boomerangMat
-    2300000: boomerang
-    3300000: boomerang
-    4300000: boomerang
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: boomerangMat
-    second: {fileID: 2100000, guid: 591f42802f6745946b5757a51ecffd16, type: 2}
+    100000: 11670_boomerang_v1_l3
+    100002: //RootNode
+    100004: Camera
+    100006: Light
+    400000: 11670_boomerang_v1_l3
+    400002: //RootNode
+    400004: Camera
+    400006: Light
+    2000000: Camera
+    2100000: boomerang
+    2300000: 11670_boomerang_v1_l3
+    3300000: 11670_boomerang_v1_l3
+    4300000: 11670_boomerang_v1_l3
+    10800000: Light
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

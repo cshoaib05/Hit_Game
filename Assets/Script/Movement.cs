@@ -81,20 +81,26 @@ public class Movement : MonoBehaviour
 
     IEnumerator waitforsec()
     {
-        
+        Vector3 beg = transform.position;
         yield return new WaitForSeconds(1);
-        if(rigid.IsSleeping())
+        if(rigid.IsSleeping() || beg == transform.position)
         {
             isMoving = false;
         }
     }
+
+
+
+
+
+
     private void Update()
     {
         if(LeveCreater.iscleared )
         {
             if(Store.inuseindex!=0)
             {
-                if (Store.inuseindex % 2 == 0 && !done)
+                if (Store.inuseindex % 2 != 0 && !done)
                 {
                     rigid.Sleep();
                     transform.position = new Vector3(transform.position.x, 1, transform.position.z);
