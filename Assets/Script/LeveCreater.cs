@@ -42,7 +42,7 @@ public class LeveCreater : MonoBehaviour
     {
         LeveCreater.iscleared = false;
         GuiController.check = false;
-        
+        Movement.done = false;
         SCorePanel.SetActive(false);
         Tablesready[tableindex].SetActive(false);
         int i;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody rigid;
+    public static Vector3 playerepos;
     private Vector3 _velocity, startpos, force, firsttouch,scndtouch,ogpos;
     LineRenderer lr;
     Ray ray1;
@@ -13,10 +14,11 @@ public class Movement : MonoBehaviour
     public static bool isMoving;
     int index;
     float distance = 0;
+   public static bool done;
 
     void Start()
     {
-
+        done = false;
         isMoving = false;
         rigid = GetComponent<Rigidbody>();
         lr = GetComponent<LineRenderer>();
@@ -34,6 +36,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        playerepos = transform.position;
         startpos = transform.position;
         if (GuiController.start && !isMoving)
         {
@@ -85,9 +88,38 @@ public class Movement : MonoBehaviour
             isMoving = false;
         }
     }
+    private void Update()
+    {
+        if(LeveCreater.iscleared )
+        {
+            if(Store.inuseindex!=0)
+            {
+                if (Store.inuseindex % 2 == 0 && !done)
+                {
+                    rigid.Sleep();
+                    transform.position = new Vector3(transform.position.x, 1, transform.position.z);
+                    rigid.constraints = RigidbodyConstraints.None;
+                    done = true;
+                }
+                else
+                {
+                    if (!done)
+                    {
+                        gameObject.SetActive(false);
+                        done = true;
+                    }
+                }
 
-
-
-
-
+            }
+            else
+            {
+                if (!done)
+                {
+                    gameObject.SetActive(false);
+                    done = true;
+                }
+            }
+            
+        }
+    }
 }

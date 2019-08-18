@@ -7,9 +7,11 @@ public class PlayerSelector : MonoBehaviour
     public List<GameObject> PlayersList;
     public GameObject Player;
     public Materialscontroller materialscontroller;
-
+    public GameObject Animobj;
+   
     private void Start()
     {
+
         playerchange();
     }
 
@@ -28,6 +30,18 @@ public class PlayerSelector : MonoBehaviour
    
     }
 
-
+    private void Update()
+    {
+        if( LeveCreater.iscleared && Store.inuseindex ==0)
+        {
+            Vector3 poss = new Vector3(Movement.playerepos.x, 0.253f, Movement.playerepos.z);
+            Animobj.transform.position =poss;
+            Animobj.SetActive(true);
+        }
+        if(!LeveCreater.iscleared)
+        {
+            Animobj.SetActive(false);
+        }
+    }
 
 }

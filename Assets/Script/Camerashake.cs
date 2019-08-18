@@ -9,7 +9,7 @@ public class Camerashake : MonoBehaviour
 
      float shakeDuration = 0f;
 
-    float shakeAmount = 0.1f;
+    float shakeAmount = 0.05f;
     float decreaseFactor = 1.0f;
 
     Vector3 originalPos;
