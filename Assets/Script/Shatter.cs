@@ -9,6 +9,7 @@ public class Shatter : MonoBehaviour
     public GameObject Bottle;
     public GameObject Jelly;
     public GameObject Scorepanel;
+    public Camerashake camerashake;
 
     private void OnCollisionExit(Collision collision)
     {
@@ -45,7 +46,11 @@ public class Shatter : MonoBehaviour
 
     public void Destroyobj()
     {
-        Destroy(shatter, 1);        
+        Destroy(shatter, 1);
+        if(ObstacleControl.obscount<=0)
+        {
+            LeveCreater.iscleared = true;
+        }
     }
     //    Pull to aim and shoot
     //   next level

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Destroyer : MonoBehaviour
 {
     public GameObject Scorepanel;
+    public Camerashake camerashake;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,32 +16,18 @@ public class Destroyer : MonoBehaviour
             if(ObstacleControl.obscount <=0)
             {
                 LeveCreater.iscleared = true;
-                Scorepanel.SetActive(true);
-
+                StartCoroutine(Timeleft());
             }
         }
     }
-    private void FixedUpdate()
-    {
-        if (ObstacleControl.obscount <= 0 && !LeveCreater.iscleared)
-        {
-            LeveCreater.iscleared = true;
 
-            StartCoroutine(Timeleft());
-        }
-        if(ObstacleControl.obscount >=1)
-        {
-            LeveCreater.iscleared = false;
-        }
-    }
-
+  
 
     IEnumerator Timeleft()
     {
+        camerashake.Shake();
         yield return new WaitForSeconds(3);
-        
         Scorepanel.SetActive(true);
      
     }
-
 }

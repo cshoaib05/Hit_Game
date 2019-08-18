@@ -39,15 +39,15 @@ public class LeveCreater : MonoBehaviour
 
     public void TableChanger()
     {
-        iscleared = false;
+        LeveCreater.iscleared = false;
+        SCorePanel.SetActive(false);
         Tablesready[tableindex].SetActive(false);
         int i;
         i=Random.Range(0, 11);
         Tablesready[i].SetActive(true);
         tableindex = i;
         PlayerPrefs.SetInt("table", tableindex);
-        iscleared = false;
-        SCorePanel.SetActive(false);
+        
         Time.timeScale = 1;
         obstaclecreater.obstacleplace();
         playerSelector.playerchange();
