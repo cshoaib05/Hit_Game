@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1307687053}
   - component: {fileID: 5466902236833357414}
   - component: {fileID: 6750054925649023156}
+  - component: {fileID: 1200661957}
   m_Layer: 0
   m_Name: Disk
   m_TagString: Player
@@ -352,3 +353,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: d277a370ad18f404da9a1a59b6a997a5, type: 3}
+--- !u!95 &1200661957
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307687050}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: bb34a81123962874a971a00efef11ee4, type: 3}
+  m_Controller: {fileID: 9100000, guid: e2ac04b315f339344a5214516dcf1663, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
