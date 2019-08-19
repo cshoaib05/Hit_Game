@@ -25,8 +25,8 @@ public class Store : MonoBehaviour
         PlayerPrefs.GetInt("5", 0);
         PlayerPrefs.GetInt("6", 0);
         PlayerPrefs.GetInt("7", 0);
-        coin = 500;
-       //coin = PlayerPrefs.GetInt("coin", 0);
+        
+       coin = PlayerPrefs.GetInt("coin", 0);
     }
 
 
