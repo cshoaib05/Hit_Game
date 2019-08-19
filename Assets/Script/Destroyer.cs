@@ -11,7 +11,7 @@ public class Destroyer : MonoBehaviour
     public TextMeshProUGUI animtext;
     public Animator anim;
    
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
 
         if (collision.gameObject.CompareTag("obs"))
