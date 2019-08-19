@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1512883102}
   - component: {fileID: 1512883101}
   - component: {fileID: 2261274743613341836}
+  - component: {fileID: 6017139481398675274}
   m_Layer: 0
   m_Name: bowlingpin
   m_TagString: obs
@@ -121,5 +122,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43e1e40d27431c64ea83a949f943646a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6017139481398675274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512883100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aaca2a950e480a42afd19f7bfd08492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

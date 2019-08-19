@@ -23,8 +23,7 @@ public class ObstacleControl : MonoBehaviour
 
     private void Awake()
     {
-        obscount = 0;
-        PlayerPrefs.SetInt("level", 4);
+     
         obscount = 0;
         dict = new Dictionary<int, List<Vector3>>
         {

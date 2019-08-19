@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class ObsFlight : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Rigidbody rigidbody;
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
     }
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            rigidbody.AddForce(rigidbody.velocity.x, 50, rigidbody.velocity.z);
+        }
+       
+    }
+
 }
