@@ -6,8 +6,6 @@ using TMPro;
 
 public class Store : MonoBehaviour
 {
-   public   Button Button;
-   public Image Sprite;
     public List<storelement> elements;
     public static int coin;
     public TextMeshProUGUI cointext;

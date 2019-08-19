@@ -11,6 +11,7 @@ public class GuiController : MonoBehaviour
     public TextMeshProUGUI Scoretext;
     public TextMeshProUGUI Scoretextpause;
     public TextMeshProUGUI ScoretextFinal;
+    public TextMeshProUGUI Pull;
     public static int score;
     [SerializeField] GameObject menupanel;
     [SerializeField] GameObject pausebutton;
@@ -22,16 +23,24 @@ public class GuiController : MonoBehaviour
     public static int vibrate;
     public Toggle toggle;
 
+
     void Awake()
     {
+        Pull.enabled = false;
         vibrate = PlayerPrefs.GetInt("vibrate", 1);
         check = false;
         start = false;
         Scoretext.enabled = false;
+       
     }
 
     private void Update()
     {
+        if(Input.GetMouseButtonDown(0) && start)
+        {
+            Pull.enabled = false;
+        }
+
         if(LeveCreater.iscleared && !check ) 
         {
             StartCoroutine(timewait());
@@ -60,6 +69,8 @@ public class GuiController : MonoBehaviour
         score = 0;
         menupanel.SetActive(false);
         Scoretext.enabled = true;
+        Pull.enabled = true;
+
     }
 
 

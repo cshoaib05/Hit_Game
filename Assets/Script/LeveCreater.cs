@@ -16,7 +16,7 @@ public class LeveCreater : MonoBehaviour
     public PlayerSelector playerSelector;
     public static int levelno;
     public static bool isbonus;
-  
+    public TextMeshProUGUI Pull;
 
     private void Start()
     {
@@ -42,7 +42,7 @@ public class LeveCreater : MonoBehaviour
 
     public void TableChanger()
     {
-
+        Pull.enabled = true;
         LeveCreater.iscleared = false;
         isbonus = false;
         GuiController.check = false;
