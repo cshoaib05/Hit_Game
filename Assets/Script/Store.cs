@@ -61,6 +61,7 @@ public class Store : MonoBehaviour
             }
         }
         cointext.text = coin.ToString();
+        PlayerPrefs.SetInt("coin", coin);
     }
 
     public void Button0()
