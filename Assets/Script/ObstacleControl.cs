@@ -68,8 +68,10 @@ public class ObstacleControl : MonoBehaviour
         int index;
         Vector3 randompos;
         List<Vector3> list;
+        print(LeveCreater.tableindex);
         list = dict[LeveCreater.tableindex];
         randompos = list[Random.Range(0, list.Count)];
+
         index = Random.Range(0, Obstacles.Count);
         gooo = Instantiate(Obstacles[index]);
         gooo.transform.position = randompos;
@@ -92,11 +94,6 @@ public class ObstacleControl : MonoBehaviour
         {
             Instantiate(coin, po, coin.transform.rotation);
         }
-    }
-
-    private void Update()
-    {
-        print(obscount);
     }
 
 }
