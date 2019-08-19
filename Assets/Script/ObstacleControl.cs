@@ -51,7 +51,7 @@ public class ObstacleControl : MonoBehaviour
     {
         if(!LeveCreater.isbonus)
         {
-            for (int i = 0; i <= Random.Range(2, 3); i++)
+            for (int i = 0; i <= Random.Range(3,4 ); i++)
             {
                 place();
             }
@@ -68,7 +68,6 @@ public class ObstacleControl : MonoBehaviour
         int index;
         Vector3 randompos;
         List<Vector3> list;
-        print(LeveCreater.tableindex);
         list = dict[LeveCreater.tableindex];
         randompos = list[Random.Range(0, list.Count)];
 

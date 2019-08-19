@@ -15,8 +15,16 @@ public class Store : MonoBehaviour
     public Sprite yellowimage;
     public PlayerSelector playerSelector;
 
+
     private void Awake()
     {
+        PlayerPrefs.GetInt("1", 0);
+        PlayerPrefs.GetInt("2", 0);
+        PlayerPrefs.GetInt("3", 0);
+        PlayerPrefs.GetInt("4", 0);
+        PlayerPrefs.GetInt("5", 0);
+        PlayerPrefs.GetInt("6", 0);
+        PlayerPrefs.GetInt("7", 0);
         coin = 500;
        //coin = PlayerPrefs.GetInt("coin", 0);
     }
@@ -24,7 +32,15 @@ public class Store : MonoBehaviour
 
     public void Start()
     {
-        inuseindex = 0;
+        for(int j=0; j<=7; j++)
+        {
+            if(PlayerPrefs.GetInt(j.ToString())==1)
+            {
+                elements[j].unlocked = true;
+            }
+        }
+
+        inuseindex = PlayerPrefs.GetInt("inuse", 0);
         for (int i = 0; i < elements.Count; i++)
         {
             if (i == inuseindex)
@@ -33,6 +49,7 @@ public class Store : MonoBehaviour
                 elements[i].inusetext.gameObject.SetActive(true);
             }
         }
+
 
     }
 
@@ -50,7 +67,6 @@ public class Store : MonoBehaviour
 
     public void Button0()
     {
-        print(elements.Count);
         if (elements[0].unlocked)
         {
             inusebool(0);
@@ -185,6 +201,7 @@ public class Store : MonoBehaviour
                 {
                     elements[i].Button.image.sprite = yellowimage;
                     elements[i].inusetext.gameObject.SetActive(true);
+                    PlayerPrefs.SetInt("inuse", i);
                 }
             }
             else
@@ -206,6 +223,7 @@ public class Store : MonoBehaviour
                 elements[index].unlocked = true;
                 coin = coin - elements[index].price;
                 PlayerPrefs.SetInt("coin", coin);
+                PlayerPrefs.SetInt(index.ToString(), 1);
             }
         }
     }
