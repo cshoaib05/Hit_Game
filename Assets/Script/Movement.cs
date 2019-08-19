@@ -36,46 +36,53 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         playerepos = transform.position;
         startpos = transform.position;
-        if (GuiController.start && !isMoving)
+        int touchcountpress = Input.touchCount;
+        if (touchcountpress > 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            Touch touch = Input.GetTouch(0);
+            if (GuiController.start && !isMoving)
             {
-
-                lr.enabled = true;
-                lr.SetPosition(0, startpos);
-                lr.useWorldSpace = true;
-            }
-
-
-            if (Input.GetMouseButton(0))
-            {
-                ray1 = Camera.main.ScreenPointToRay(Input.mousePosition);
-                plane = new Plane(Vector3.up, transform.position);
-                if (plane.Raycast(ray1, out distance))
+                if (touch.phase == TouchPhase.Began)
                 {
-                    scndtouch = ray1.GetPoint(distance);
-                    firsttouch = transform.position;
-                    ogpos = scndtouch - firsttouch;
-                   force = new Vector3( ogpos.x* -1f, transform.position.y,ogpos.z * -1f);
+
+                    lr.enabled = true;
+                    lr.SetPosition(0, startpos);
+                    lr.useWorldSpace = true;
+                }
+
+
+                if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+                {
+                    ray1 = Camera.main.ScreenPointToRay(touch.position);
+                    plane = new Plane(Vector3.up, transform.position);
+                    if (plane.Raycast(ray1, out distance))
+                    {
+                        scndtouch = ray1.GetPoint(distance);
+                        firsttouch = transform.position;
+                        ogpos = scndtouch - firsttouch;
+                        force = new Vector3(ogpos.x * -1f, transform.position.y, ogpos.z * -1f);
+
+                    }
+                    _velocity = Vector3.Scale(force, new Vector3(10f, 1f, 10f));
+                    lr.SetPosition(1, _velocity);
+                }
+
+
+                if (touch.phase== TouchPhase.Ended)
+                {
+                    rigid.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+
+                    rigid.AddForce(_velocity, ForceMode.VelocityChange);
+                    lr.enabled = false;
+                    isMoving = true;
 
                 }
-                _velocity = Vector3.Scale(force, new Vector3(10f, 1f, 10f));
-                lr.SetPosition(1, _velocity);
-            }
-
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                rigid.constraints = RigidbodyConstraints.FreezePositionY| RigidbodyConstraints.FreezeRotation;
-                
-                rigid.AddForce(_velocity, ForceMode.VelocityChange);
-                lr.enabled = false;
-                isMoving = true;
-                        
             }
         }
+      
         StartCoroutine(waitforsec());
     }
 
@@ -88,9 +95,6 @@ public class Movement : MonoBehaviour
             isMoving = false;
         }
     }
-
-
-
 
 
 
